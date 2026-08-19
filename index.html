@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bloomly Lite</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Bloomly Lite</h1>
+    <nav>
+      <button data-page="plants">Мои растения</button>
+      <button data-page="add">Добавить растение</button>
+      <button data-page="gallery">Галерея</button>
+      <button data-page="search">Поиск</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Мои растения -->
+    <section id="page-plants" class="page">
+      <h2>Мои растения</h2>
+      <div id="plants-list"></div>
+    </section>
+
+    <!-- Добавить растение -->
+    <section id="page-add" class="page" style="display:none;">
+      <h2>Добавить растение</h2>
+      <form id="add-plant-form">
+        <label>Название:</label>
+        <input id="plant-name" required />
+
+        <label>Описание:</label>
+        <textarea id="plant-description"></textarea>
+
+        <label>Частота полива (дней):</label>
+        <input id="plant-frequency" type="number" min="1" required />
+
+        <button type="submit">Сохранить</button>
+      </form>
+    </section>
+
+    <!-- Галерея -->
+    <section id="page-gallery" class="page" style="display:none;">
+      <h2>Галерея</h2>
+      <input type="file" id="photo-input" accept="image/*" />
+      <button id="upload-photo-button">Добавить фото</button>
+      <div id="gallery"></div>
+    </section>
+
+    <!-- Поиск -->
+    <section id="page-search" class="page" style="display:none;">
+      <h2>Поиск растений</h2>
+      <input id="search-input" placeholder="Введите название..." />
+      <div id="search-results"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
