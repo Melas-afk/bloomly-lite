@@ -44,7 +44,9 @@
     <!-- Галерея -->
     <section id="page-gallery" class="page" style="display:none;">
       <h2>Галерея</h2>
+      <input type="text" id="gallery-search" placeholder="Поиск по растениям...">
       <input type="file" id="photo-input" accept="image/*" />
+      <input type="text" id="photo-plant-name" placeholder="Название растения" />
       <button id="upload-photo-button">Добавить фото</button>
       <div id="gallery"></div>
     </section>
@@ -63,6 +65,12 @@
   <div id="details-content"></div>
   <button id="back-btn">Назад</button>
 </section>
+
+<div id="photo-modal" class="modal" style="display:none;">
+  <span id="modal-close">&times;</span>
+  <img id="modal-img" src="" alt="">
+</div>
+
 
   <script src="plant.js"></script>
   <script src="app.js"></script>

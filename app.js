@@ -146,8 +146,6 @@ function loadPlants() {
   });
 }
 
-loadPlants();
-
 function showPlantDetails(plant) {
   console.log("showPlantDetails вызван для", plant.name);
   const detailsPage = document.getElementById("page-details");
@@ -181,3 +179,134 @@ function getPlantsNeedingWatering() {
     return diff >= p.frequency;
   });
 }
+
+// галерея 
+let photos = [];
+let currentPlantName = "";
+
+// сохранение
+function savePhotos() {
+  localStorage.setItem("photos", JSON.stringify(photos));
+}
+
+// загрузка
+function loadPhotos() {
+  const data = localStorage.getItem("photos");
+  if (!data) return;
+  photos = JSON.parse(data);
+}
+
+// рендер галереи
+function renderGallery(filterName = "") {
+  const gallery = document.getElementById("gallery");
+
+  let filtered = photos;
+
+  if (filterName.trim() !== "") {
+    filtered = photos.filter(p =>
+      p.plantName.toLowerCase().includes(filterName.toLowerCase())
+    );
+  }
+
+  gallery.innerHTML = filtered
+    .map((photo, index) => `
+      <div class="photo-item">
+        <img src="${photo.src}" alt="${photo.plantName}" class="gallery-photo" data-index="${index}">
+        <p>${photo.plantName}</p>
+        <button class="delete-photo-btn" data-index="${index}">Удалить</button>
+      </div>
+    `)
+    .join("");
+
+  // удаление фото
+  document.querySelectorAll(".delete-photo-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const index = btn.dataset.index;
+      photos.splice(index, 1);
+      savePhotos();
+      renderGallery(filterName);
+    });
+  });
+
+  // открытие фото 
+  document.querySelectorAll(".gallery-photo").forEach(img => {
+    img.addEventListener("click", () => {
+      const modal = document.getElementById("photo-modal");
+      const modalImg = document.getElementById("modal-img");
+
+      modalImg.src = img.src;
+      modal.style.display = "flex";
+    });
+  });
+}
+
+
+// инициализация галереи
+function initGallery() {
+  const photoInput = document.getElementById("photo-input");
+  const plantNameInput = document.getElementById("photo-plant-name");
+  const uploadButton = document.getElementById("upload-photo-button");
+
+  uploadButton.addEventListener("click", () => {
+    const file = photoInput.files[0];
+    const plantName = plantNameInput.value.trim();
+
+    // проверка 
+    if (!file) {
+      alert("Выберите фото.");
+      return;
+    }
+
+    // проверка
+    if (plantName === "") {
+      alert("Введите название растения.");
+      return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      const imgSrc = reader.result;
+
+      photos.push({
+        src: imgSrc,
+        plantName: plantName,
+        date: new Date().toISOString()
+      });
+
+      savePhotos();
+      renderGallery();
+      photoInput.value = "";
+      plantNameInput.value = "";
+    };
+
+    reader.readAsDataURL(file);
+  });
+}
+
+
+// поиск
+document.getElementById("gallery-search").addEventListener("input", (e) => {
+  renderGallery(e.target.value);
+});
+
+const modal = document.getElementById("photo-modal");
+const modalClose = document.getElementById("modal-close");
+
+modalClose.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+modal.addEventListener("click", (e) => {
+  // закрытие на клик по фону!
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+
+//загрузчики 
+loadPlants();
+loadPhotos();
+initGallery();
+renderGallery();
