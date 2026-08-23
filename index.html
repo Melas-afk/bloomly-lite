@@ -13,7 +13,6 @@
       <button data-page="plants">Мои растения</button>
       <button data-page="add">Добавить растение</button>
       <button data-page="gallery">Галерея</button>
-      <button data-page="search">Поиск</button>
     </nav>
   </header>
 
@@ -21,6 +20,8 @@
     <!-- Мои растения -->
     <section id="page-plants" class="page">
       <h2>Мои растения</h2>
+      <input type="text" id="plant-search" placeholder="Поиск по растениям...">
+      <div id="search-status"></div>
       <div id="plants-list"></div>
     </section>
 
@@ -45,17 +46,15 @@
     <section id="page-gallery" class="page" style="display:none;">
       <h2>Галерея</h2>
       <input type="text" id="gallery-search" placeholder="Поиск по растениям...">
+      <div id="gallery-search-status"></div>
       <input type="file" id="photo-input" accept="image/*" />
       <input type="text" id="photo-plant-name" placeholder="Название растения" />
       <button id="upload-photo-button">Добавить фото</button>
       <div id="gallery"></div>
-    </section>
+      <h3>Сообщество растений (учебное демо)</h3>
+      <div id="community-status"></div>
+      <div id="community-gallery" class="gallery"></div>
 
-    <!-- Поиск -->
-    <section id="page-search" class="page" style="display:none;">
-      <h2>Поиск растений</h2>
-      <input id="search-input" placeholder="Введите название..." />
-      <div id="search-results"></div>
     </section>
   </main>
 
@@ -73,6 +72,8 @@
 
 
   <script src="plant.js"></script>
+  <script type="module" src="./api.js"></script>
+  <script type="module" src="./app.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

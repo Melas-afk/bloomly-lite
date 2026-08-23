@@ -1,5 +1,7 @@
 console.log("Bloomly Lite запущен");
 
+import { loadCommunityPhotos } from "./api.js";
+
 // все кнопки 
 const navButtons = document.querySelectorAll("nav button");
 
@@ -289,6 +291,31 @@ function initGallery() {
 document.getElementById("gallery-search").addEventListener("input", (e) => {
   renderGallery(e.target.value);
 });
+const gallerySearch = document.getElementById("gallery-search");
+const gallerySearchStatus = document.getElementById("gallery-search-status");
+
+gallerySearch.addEventListener("input", debounce(() => {
+  const query = gallerySearch.value.trim().toLowerCase();
+
+  gallerySearchStatus.textContent = "Загрузка...";
+  setTimeout(() => {
+    const results = photos.filter(photo =>
+      photo.plantName.toLowerCase().includes(query)
+    );
+
+    if (results.length === 0) {
+      gallerySearchStatus.textContent = "Ничего не найдено";
+    } else {
+      gallerySearchStatus.textContent = "";
+    }
+
+    renderGalleryResults(results);
+
+  }, 300);
+
+}, 300));
+
+
 
 const modal = document.getElementById("photo-modal");
 const modalClose = document.getElementById("modal-close");
@@ -305,8 +332,49 @@ modal.addEventListener("click", (e) => {
 });
 
 
+// для поиска
+function debounce(fn, delay) {
+  let timer;
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+
+const searchInput = document.getElementById("plant-search");
+const searchStatus = document.getElementById("search-status");
+
+searchInput.addEventListener("input", debounce(() => {
+  const query = searchInput.value.trim().toLowerCase();
+
+  searchStatus.textContent = "Загрузка...";
+  
+  setTimeout(() => {
+    const results = plants.filter(p =>
+      p.name.toLowerCase().includes(query)
+    );
+
+    if (results.length === 0) {
+      searchStatus.textContent = "Ничего не найдено";
+    } else {
+      searchStatus.textContent = "";
+    }
+
+    renderPlants(results);
+  }, 300);
+
+}, 300));
+
+function renderPlants(list) {
+  plantsList.innerHTML = "";
+  list.forEach(renderPlant);
+}
+
+
+
 //загрузчики 
 loadPlants();
 loadPhotos();
 initGallery();
 renderGallery();
+loadCommunityPhotos();
