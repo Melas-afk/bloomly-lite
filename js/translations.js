@@ -20,8 +20,10 @@ export const translations = {
     detailsBtn: "Подробнее",
     deleteBtn: "Удалить",
     saveEditBtn: "Сохранить",
+    backBtn: "Назад",
+    Days: "Дней",
 
-    detailsDescriptionLabel: "Описание:",
+    detailsTitle: "Подробнее о растении",
     detailsFrequencyLabel: "Частота полива:",
     detailsLastWateredLabel: "Последний полив:",
     detailsStatusLabel: "Статус:",
@@ -57,8 +59,10 @@ export const translations = {
     detailsBtn: "Details",
     deleteBtn: "Delete",
     saveEditBtn: "Save",
+    backBtn: "Back",
+    Days: "Days",
 
-    detailsDescriptionLabel: "Description:",
+    detailsTitle: "Plant details",
     detailsFrequencyLabel: "Watering frequency:",
     detailsLastWateredLabel: "Last watered:",
     detailsStatusLabel: "Status:",

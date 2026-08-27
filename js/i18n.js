@@ -31,8 +31,9 @@ export function applyLanguage(lang) {
   document.getElementById("photo-plant-name").placeholder = t.photoPlantNamePlaceholder;
   document.getElementById("upload-photo-button").textContent = t.uploadButton;
   document.querySelector("#page-gallery h3").textContent = t.communityDemoTitle;
-}
 
+  document.getElementById("details-title").textContent = t.detailsTitle;
+}
 export function setLanguage(lang) {
   setCurrentLang(lang);
 

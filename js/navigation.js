@@ -10,10 +10,3 @@ export function initNavigation() {
     });
   });
 }
-
-export function initBackButton() {
-  document.getElementById("back-btn").addEventListener("click", () => {
-    document.querySelectorAll(".page").forEach(p => p.style.display = "none");
-    document.getElementById("page-plants").style.display = "block";
-  });
-}

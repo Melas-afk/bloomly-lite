@@ -1,6 +1,6 @@
 console.log("Bloomly Lite запущен");
 
-import { initNavigation, initBackButton } from "./navigation.js";
+import { initNavigation } from "./navigation.js";
 
 import { loadPlants } from "./storage.js";
 import { renderPlant } from "./render.js";
@@ -22,7 +22,6 @@ import { plants } from "./state.js";
 function init() {
 
   initNavigation();
-  initBackButton();
 
   initAddPlantForm();
   loadPlants();
