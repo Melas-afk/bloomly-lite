@@ -358,6 +358,85 @@ button {
   opacity: 0.9; 
 }
 
+#page-add {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+#add-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;        
+  font-size: 50px;         
+  color: #00321D;
+  margin: -20px 0 50px 0;
+  line-height: 1.1; 
+}
+
+#add-plant-form {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;   
+  width: 60%;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-row label {
+  color: #2B5443;
+  font-size: 17px;
+  font-weight: 500;
+  width: 35%;
+}
+
+
+.form-row input,
+.form-row textarea {
+  background-color: #DDEAE4;
+  color: #25503E;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;        
+  font-size: 16px;  
+  width: 60%;
+  outline: none;
+  resize: none;
+  transition: background 0.2s ease;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  background-color: #CFE1D9;
+}
+
+
+#save-btn {
+  background-color: #267454;
+  color: #DEF8EB;
+  border: none;
+  border-radius: 30px;
+  padding: 6px 32px;     
+  font-size: 15px;        
+  font-weight: 400;
+  cursor: pointer;
+  text-align: center;
+  width: 220px;          
+  transition: background 0.2s ease;
+  align-self: flex-start;
+}
+
+#save-btn:hover {
+  background-color: #1f5e45;
+}
+
+
 
 
 

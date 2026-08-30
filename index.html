@@ -37,21 +37,31 @@
       <div id="plants-list"></div>
     </section>
 
-    <section id="page-add" class="page" style="display:none;">
-      <h2>Добавить растение</h2>
-      <form id="add-plant-form">
-        <label>Название:</label>
-        <input id="plant-name" required />
+<section id="page-add" class="page" style="display:none;">
+  <h2 id="add-title">Добавить растение</h2>
 
-        <label>Описание:</label>
-        <textarea id="plant-description"></textarea>
+  <form id="add-plant-form">
 
-        <label>Частота полива (дней):</label>
-        <input id="plant-frequency" type="number" min="1" required />
+    <div class="form-row">
+      <label for="plant-name">Название:</label>
+      <input id="plant-name" required />
+    </div>
 
-        <button type="submit">Сохранить</button>
-      </form>
-    </section>
+    <div class="form-row">
+      <label for="plant-description">Описание:</label>
+      <textarea id="plant-description"></textarea>
+    </div>
+
+    <div class="form-row">
+      <label for="plant-frequency">Частота полива (дней):</label>
+      <input id="plant-frequency" type="number" min="1" required />
+    </div>
+
+    <button type="submit" id="save-btn">Сохранить</button>
+
+  </form>
+</section>
+
 
     <section id="page-gallery" class="page" style="display:none;">
       <h2>Галерея</h2>
