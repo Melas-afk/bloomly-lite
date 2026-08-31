@@ -1,9 +1,7 @@
-import { photos, getCurrentLang } from "./state.js";
+import { photos } from "./state.js";
 import { savePhotos } from "./storage.js";
-import { translations } from "./translations.js";
 
 export function renderGallery(filter = "") {
-  const t = translations[getCurrentLang()];
   const gallery = document.getElementById("gallery");
 
   const filtered = filter
@@ -12,15 +10,9 @@ export function renderGallery(filter = "") {
 
   gallery.innerHTML = filtered.map((photo, index) => `
     <div class="photo-item">
-      <div class="photo-wrapper">
-        <img src="${photo.src}" class="gallery-photo" data-index="${index}">
-      </div>
-
-      <p class="photo-name">${photo.plantName}</p>
-
-      <button class="delete-photo-btn" data-index="${index}">
-        ${t.deletePhotoBtn}
-      </button>
+      <img src="${photo.src}" class="gallery-photo" data-index="${index}">
+      <p>${photo.plantName}</p>
+      <button class="delete-photo-btn" data-index="${index}">Удалить</button>
     </div>
   `).join("");
 
@@ -32,16 +24,6 @@ export function initGallery() {
   const nameInput = document.getElementById("photo-plant-name");
   const uploadBtn = document.getElementById("upload-photo-button");
 
-  const fileNameLabel = document.getElementById("selected-file-name");
-
-  input.addEventListener("change", () => {
-    if (input.files.length > 0) {
-      fileNameLabel.textContent = input.files[0].name;
-    } else {
-      fileNameLabel.textContent = "Файл не выбран";
-    }
-  });
-  
   uploadBtn.addEventListener("click", () => {
     const file = input.files[0];
     const name = nameInput.value.trim();
@@ -80,4 +62,3 @@ export function initGalleryEvents(filterName = "") {
     });
   });
 }
-

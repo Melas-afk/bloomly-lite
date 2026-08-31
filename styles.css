@@ -438,189 +438,43 @@ button {
 
 
 
-/* Заголовок страницы */
-#gallery-title {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 50px;
-  color: #00321D;
-  margin: 0 0 10px 0;
-  line-height: 1.1;
+
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
 }
 
-/* Контейнер галереи — ВЫРАВНИВАЕМ ПО ЛЕВОМУ КРАЮ */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  justify-content: flex-start;   /* ← ключевой момент */
-  width: 100%;                   /* чтобы левое выравнивание работало */
-  max-width: 900px;              /* можно менять */
-  margin-top: 20px;
+#gallery img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-/* Ряд загрузки */
-.upload-row {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin: 20px 0 30px 0;
-}
-
-/* Поле ввода названия — ДЕЛАЕМ НИЖЕ */
-#photo-plant-name {
-  background-color: #DDEAE4;
-  color: #25503E;
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  border: none;
-  border-radius: 5px;
-  padding: 6px 10px;        /* ← уменьшенная высота */
-  width: 200px;
-  outline: none;
-  transition: background 0.2s ease;
-}
-
-#photo-plant-name:focus {
-  background-color: #CFE1D9;
-}
-
-/* Кнопка добавления фото */
-#upload-photo-button {
-  background-color: #267454;
-  color: #DEF8EB;
-  border: none;
-  border-radius: 30px;
-  padding: 6px 32px;
-  font-size: 15px;
-  font-weight: 400;
-  cursor: pointer;
-  text-align: center;
-  transition: background 0.2s ease;
-}
-
-#upload-photo-button:hover {
-  background-color: #1f5e45;
-}
-
-/* Карточка */
 .photo-item {
-  background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  width: 160px;                 /* компактнее */
-  padding: 12px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  transition: transform 0.2s ease;
+  gap: 5px;
 }
 
-.photo-item:hover {
-  transform: translateY(-3px);
-}
-
-/* Фото */
-.gallery-photo {
+.photo-item img {
   width: 100%;
-  height: 130px;                /* компактнее */
+  height: 120px;
   object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 8px;
+  border-radius: 8px;
 }
 
-/* Название растения */
-.photo-item p {
-  font-size: 15px;
-  font-weight: 500;
-  color: #25503E;
-  margin: 5px 0 8px 0;
-  text-align: center;
-}
-
-/* Кнопка удаления */
 .delete-photo-btn {
-  background-color: #267454;
-  color: #DEF8EB;
+  background: #ff4d4d;
+  color: white;
   border: none;
-  border-radius: 30px;
-  padding: 6px 20px;
-  font-size: 14px;
+  padding: 5px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background 0.2s ease;
 }
-
-.delete-photo-btn:hover {
-  background-color: #1f5e45;
-}
-
-/* Заголовок сообщества */
-#community-title {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  color: #00321D;
-  margin-top: 40px;
-}
-
-
-/* Скрываем настоящий input */
-#photo-input {
-  display: none;
-}
-
-/* Кастомная кнопка выбора файла */
-.upload-file-btn {
-  background-color: #267454;
-  color: #DEF8EB;
-  border: none;
-  border-radius: 30px;
-  padding: 6px 32px;
-  font-size: 15px;
-  font-weight: 400;
-  cursor: pointer;
-  text-align: center;
-  transition: background 0.2s ease;
-  font-family: 'Poppins', sans-serif;
-}
-
-.upload-file-btn:hover {
-  background-color: #1f5e45;
-}
-
-/* Скрываем настоящий input */
-#photo-input {
-  display: none;
-}
-
-/* Кастомная кнопка выбора файла */
-.upload-file-btn {
-  background-color: #267454;
-  color: #DEF8EB;
-  border: none;
-  border-radius: 30px;
-  padding: 6px 32px;
-  font-size: 15px;
-  font-weight: 400;
-  cursor: pointer;
-  text-align: center;
-  transition: background 0.2s ease;
-  font-family: 'Poppins', sans-serif;
-}
-
-.upload-file-btn:hover {
-  background-color: #1f5e45;
-}
-
-/* Имя выбранного файла */
-.file-name {
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: #25503E;
-  margin-left: 10px;
-  min-width: 120px;
-}
-
 
 .modal {
   position: fixed;
