@@ -37,6 +37,10 @@ export const translations = {
 
     communityDemoTitle: "Сообщество растений (учебное демо)",
     pageSubtitle: "Все ваши прекрасные расстения!",
+
+    selectFileBtn: "Выбрать файл",
+    noFileSelected: "Файл не выбран",
+    deletePhotoBtn: "Удалить",
   },
   en: {
     navMyPlants: "My Plants",
@@ -77,6 +81,9 @@ export const translations = {
     communityDemoTitle: "Plant Community (demo)",
     pageSubtitle: "All your beautiful plants!",
 
+    selectFileBtn: "Select file",
+    noFileSelected: "No file selected",
+    deletePhotoBtn: "Delete",
   }
 };
 

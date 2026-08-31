@@ -63,28 +63,38 @@
 </section>
 
 
-    <section id="page-gallery" class="page" style="display:none;">
-      <h2>Галерея</h2>
-      <div class="search-wrapper">
-        <input type="text" id="gallery-search" class="search-input" placeholder="Поиск по растениям...">
-        <div id="gallery-search-status"></div>
-      </div> 
-      <input type="file" id="photo-input" accept="image/*" />
-      <input type="text" id="photo-plant-name" placeholder="Название растения" />
-      <button id="upload-photo-button">Добавить фото</button>
-      <div id="gallery"></div>
-      <h3>Сообщество растений (учебное демо)</h3>
-      <div id="community-status"></div>
-      <div id="community-gallery" class="gallery"></div>
+<section id="page-gallery" class="page" style="display:none;">
+  <h2 id="gallery-title">Галерея</h2>
 
-    </section>
+  <div class="search-wrapper">
+    <input type="text" id="gallery-search" class="search-input" placeholder="Поиск по растениям...">
+    <img src="pic/Search.png" class="search-icon" alt="search">
+    <div id="gallery-search-status"></div>
+  </div>
 
-    <section id="page-details" class="page" style="display:none;">
-      <h2 id="details-title"></h2>
-      <div id="details-content"></div>
-    </section>
+<div class="upload-row">
+  <input type="file" id="photo-input" accept="image/*">
 
-  </main>
+  <label for="photo-input" class="upload-file-btn">
+    Выбрать файл
+  </label>
+
+  <span id="selected-file-name" class="file-name">Файл не выбран</span>
+
+  <input type="text" id="photo-plant-name" placeholder="Название растения">
+  <button id="upload-photo-button">Добавить фото</button>
+</div>
+
+
+  <div id="gallery" class="gallery"></div>
+
+  <h3 id="community-title">Сообщество растений (учебное демо)</h3>
+  <div id="community-status"></div>
+  <div id="community-gallery" class="gallery"></div>
+</section>
+
+
+</main>
 
 <div id="photo-modal" class="modal" style="display:none;">
   <span id="modal-close">&times;</span>
