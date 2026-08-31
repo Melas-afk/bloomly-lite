@@ -1,7 +1,9 @@
-import { photos } from "./state.js";
+import { photos, getCurrentLang } from "./state.js";
 import { savePhotos } from "./storage.js";
+import { translations } from "./translations.js";
 
 export function renderGallery(filter = "") {
+  const t = translations[getCurrentLang()];
   const gallery = document.getElementById("gallery");
 
   const filtered = filter
@@ -12,7 +14,7 @@ export function renderGallery(filter = "") {
     <div class="photo-item">
       <img src="${photo.src}" class="gallery-photo" data-index="${index}">
       <p>${photo.plantName}</p>
-      <button class="delete-photo-btn" data-index="${index}">Удалить</button>
+      <button class="delete-photo-btn" data-index="${index}">${t.deleteBtn}</button>
     </div>
   `).join("");
 
@@ -23,6 +25,21 @@ export function initGallery() {
   const input = document.getElementById("photo-input");
   const nameInput = document.getElementById("photo-plant-name");
   const uploadBtn = document.getElementById("upload-photo-button");
+  const fileNameLabel = document.getElementById("selected-file-name");
+  const selectFileLabel = document.querySelector(".upload-file-btn");
+
+  const t = translations[getCurrentLang()];
+
+  fileNameLabel.textContent = t.noFileSelected;
+  selectFileLabel.textContent = t.selectFileBtn;
+
+  input.addEventListener("change", () => {
+    if (input.files.length > 0) {
+      fileNameLabel.textContent = input.files[0].name;
+    } else {
+      fileNameLabel.textContent = t.noFileSelected;
+    }
+  });
 
   uploadBtn.addEventListener("click", () => {
     const file = input.files[0];
@@ -34,6 +51,9 @@ export function initGallery() {
       photos.push({ src: reader.result, plantName: name, date: new Date() });
       savePhotos();
       renderGallery();
+
+      input.value = "";              
+      fileNameLabel.textContent = t.noFileSelected;  
     };
     reader.readAsDataURL(file);
   });

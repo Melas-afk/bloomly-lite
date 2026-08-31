@@ -33,6 +33,8 @@ export function applyLanguage(lang) {
   document.querySelector("#page-gallery h3").textContent = t.communityDemoTitle;
 
   document.getElementById("details-title").textContent = t.detailsTitle;
+  document.querySelector(".upload-file-btn").textContent = t.selectFileBtn;
+  document.getElementById("selected-file-name").textContent = t.noFileSelected;
 }
 export function setLanguage(lang) {
   setCurrentLang(lang);
