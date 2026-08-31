@@ -6,63 +6,59 @@ body {
   position: relative;
 }
 
-
 body::before {
   content: "";
   position: fixed;
   top: 50%;
   left: 50%;
   width: 120vw;
-  height: 120vh;     
+  height: 120vh;
   background-image: url('pic/Leaves.png');
-  background-size: contain; 
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   transform: translate(-50%, -50%);
-  z-index: -1; 
+  z-index: -1;
 }
 
 ::selection {
-  color: #DDEAE4; 
-  background:#00321D;      
+  color: #DDEAE4;
+  background:#00321D;
 }
-
-
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 50px;
+  padding: 0.75rem 3.125rem; 
   background-color: #ffffff;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
-
 .logo {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-style: italic;
-  font-size: 20px;
+  font-size: 1.25rem; 
   color: #00321D;
-  letter-spacing: 1px;
+  letter-spacing: 0.0625rem; 
   line-height: 1;
   margin: 0;
 }
 
 nav {
   display: flex;
-  gap: 55px;
-  margin-left: -60px;
+  gap: 3.4375rem;
+  margin-left: -3.75rem; 
 }
 
 nav button {
   background: none;
   border: none;
   font-family: 'Poppins', sans-serif;
-  font-size: 15px;
+  font-size: 0.9375rem; 
   color: #00321D;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -72,7 +68,7 @@ nav button {
 
 .lang-switch {
   display: flex;
-  gap: 12px;
+  gap: 0.75rem; 
   cursor: pointer;
   user-select: text;
 }
@@ -80,147 +76,144 @@ nav button {
 .lang-option {
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  letter-spacing: 1px;
-  transition: color 0.2s ease; 
-  
-  color: #C2C2C2; /
+  font-size: 1.25rem; 
+  letter-spacing: 0.0625rem; 
+  transition: color 0.2s ease;
+  color: #C2C2C2;
 }
+
 .lang-option.active {
-  color: #00321D; 
+  color: #00321D;
 }
-
-
-
 
 main {
-  width: 850px;
-  min-height: calc(100vh - 120px); 
-  margin: 100px auto 0 auto;       
+  width: 53.125rem; 
+  min-height: calc(100vh - 7.5rem); 
+  margin: 6.25rem auto 0 auto; 
   background-color: #ffffff;
-  border-radius: 33px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08); 
-  padding: 40px 50px;            
+  border-radius: 2.0625rem; 
+  box-shadow: 0 0.25rem 1.5625rem rgba(0, 0, 0, 0.08); 
+  padding: 2.5rem 3.125rem; 
   position: relative;
-  padding-top: 15px; 
-  padding-left: 35px;
-  z-index: 1;               
+  padding-top: 0.9375rem; 
+  padding-left: 2.1875rem; 
+  z-index: 1;
 }
 
 .page-title {
   font-family: 'Poppins', sans-serif;
-  font-weight: 500;        
-  font-size: 50px;         
+  font-weight: 500;
+  font-size: 3.125rem; 
   color: #00321D;
-  margin: 0 0 10px 0;      
-  line-height: 1.1;       
+  margin: 0 0 0.625rem 0; 
+  line-height: 1.1;
 }
 
 .page-subtitle {
   font-family: 'Poppins', sans-serif;
-  font-weight: 400;        
-  font-size: 12px;         
-  color: #C2C2C2;          
-  margin: 5px 0 25px 0;   
+  font-weight: 400;
+  font-size: 0.75rem; 
+  color: #C2C2C2;
+  margin: 0.3125rem 0 1.5625rem 0; 
   line-height: 1.4;
 }
 
 .search-wrapper {
   position: relative;
-  width: 300px;     
-  margin-bottom: 60px;      
+  width: 18.75rem;
+  margin-bottom: 3.75rem; 
 }
 
 .search-input {
   width: 100%;
-  padding: 5px 45px 4px 18px; 
+  padding: 0.3125rem 2.8125rem 0.25rem 1.125rem; 
   background-color: #DDEAE4;
   border: none;
-  border-radius: 29px;
+  border-radius: 1.8125rem; 
   font-family: 'Poppins', sans-serif;
-  font-size: 16px;
+  font-size: 1rem; 
   color: #00321D;
   outline: none;
 }
 
 .search-icon {
   position: absolute;
-  right: -50px;              
+  right: -3.125rem; 
   top: 50%;
   transform: translateY(-50%);
-  width: 25px;               
-  height: 30px;
-  pointer-events: none;    
+  width: 1.5625rem; 
+  height: 1.875rem; 
+  pointer-events: none;
 }
 
 .plant-card {
   background-color: #ffffff;
-  border-radius: 33px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
-  padding: 20px;
-  width: 300px;
+  border-radius: 2.0625rem; 
+  box-shadow: 0 0.25rem 1.5625rem rgba(0, 0, 0, 0.08);
+  padding: 1.25rem; 
+  width: 18.75rem; 
   box-sizing: border-box;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.1875rem 0.5rem rgba(0, 0, 0, 0.15); 
 }
 
 .plant-card .plant-name {
-  color: #2B5443;     
+  color: #2B5443;
   font-family: 'Poppins', sans-serif;
-  font-weight: 700;     
-  font-size: 22px;         
-  font-weight: 600;        
-  margin-top: 0;           
-  margin-bottom: 10px;     
-  line-height: 1.2;        
+  font-weight: 600;
+  font-size: 1.375rem; 
+  margin-top: 0;
+  margin-bottom: 0.625rem;
+  line-height: 1.2;
 }
 
 .plant-card .plant-description {
-  background-color: #DDEAE4;   
-  color: #25503E;       
-  font-family: 'Poppins', sans-serif;      
-  font-size: 14px;             
-  padding: 14px 0px 5px 10px;          
-  border-radius: 5px;        
-  margin: 0px 5px 12px 0;        
-  line-height: 1.4;            
+  background-color: #DDEAE4;
+  color: #25503E;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem; 
+  padding: 0.875rem 0 0.3125rem 0.625rem; 
+  border-radius: 0.3125rem; 
+  margin: 0 0.3125rem 0.75rem 0; 
+  line-height: 1.4;
 }
 
 .plant-card .plant-frequency,
 .plant-card .plant-last-watered {
-  color: #2B5443;        
+  color: #2B5443;
   font-family: 'Poppins', sans-serif;
-  font-size: 15px;       
-  font-weight: 500;      
-  margin: 15px 0;        
+  font-size: 0.9375rem; 
+  font-weight: 500;
+  margin: 0.9375rem 0; 
   line-height: 1.3;
 }
 
 section {
-  background: transparent; 
-  margin-bottom: 16px;
-  padding: 16px;
+  background: transparent;
+  margin-bottom: 1rem; 
+  padding: 1rem; 
   border-radius: 0;
   box-shadow: none;
 }
+
 #plants-list,
 #gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 1.875rem; 
 }
 
 .plant-card button {
-  background-color: #267454;   
-  color: #DEF8EB;             
+  background-color: #267454;
+  color: #DEF8EB;
   border: none;
-  border-radius: 30px;         
-  padding: 7px 16px;          
-  font-size: 14px;            
-  font-weight: 400;            
-  cursor: pointer;               
-  text-align: center;         
-  margin-top: 10px;    
-  width: 47%;          
+  border-radius: 1.875rem; 
+  padding: 0.4375rem 1rem; 
+  font-size: 0.875rem; 
+  font-weight: 400;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 0.625rem; 
+  width: 47%;
   transition: background 0.2s ease;
 }
 
@@ -237,53 +230,51 @@ button {
 }
 
 .plant-card .delete-btn {
-  background-color: #164F38;  
-  font-size: 14px;             
-  padding: 7px 10px;          
-  width: auto;                 
-  display: inline-block;     
+  background-color: #164F38;
+  font-size: 0.875rem;
+  padding: 0.4375rem 0.625rem;
+  width: auto;
+  display: inline-block;
 }
-
 
 #page-details {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px 0;
+  padding: 0.9375rem 0;
   font-family: 'Poppins', sans-serif;
 }
 
 #details-title {
   font-family: 'Poppins', sans-serif;
-  font-weight: 500;        
-  font-size: 50px;         
+  font-weight: 500;
+  font-size: 3.125rem;
   color: #00321D;
-  margin: 0 0 10px 0;      
-  line-height: 1.1; 
+  margin: 0 0 0.625rem 0;
+  line-height: 1.1;
 }
 
 #details-content {
   background-color: #ffffff;
-  border-radius: 33px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
-  padding: 30px;
-  width: 50%;           
-  min-height: 55vh;       
+  border-radius: 2.0625rem;
+  box-shadow: 0 0.25rem 1.5625rem rgba(0, 0, 0, 0.08);
+  padding: 1.875rem;
+  width: 50%;
+  min-height: 55vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-
 #details-content h3 {
   background-color: #DDEAE4;
   color: #25503E;
   font-family: 'Poppins', sans-serif;
-  font-size: 26px;
-  padding: 14px 10px 8px 10px;
-  border-radius: 5px;
-  margin: 0 0 15px 0;
+  font-size: 1.625rem;
+  padding: 0.875rem 0.625rem 0.5rem 0.625rem;
+  border-radius: 0.3125rem;
+  margin: 0 0 0.9375rem 0;
   line-height: 1.4;
   font-weight: 700;
   width: 100%;
@@ -294,10 +285,10 @@ button {
   background-color: #DDEAE4;
   color: #25503E;
   font-family: 'Poppins', sans-serif;
-  font-size: 17px;
-  padding: 14px 10px 8px 10px;
-  border-radius: 5px;
-  margin: 0 0 15px 0;
+  font-size: 1.0625rem;
+  padding: 0.875rem 0.625rem 0.5rem 0.625rem;
+  border-radius: 0.3125rem;
+  margin: 0 0 0.9375rem 0;
   line-height: 1.4;
   width: 100%;
   box-sizing: border-box;
@@ -306,18 +297,18 @@ button {
 #details-content p {
   color: #2B5443;
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 500;
-  margin: 10px 0px;
+  margin: 0.625rem 0;
   line-height: 1.3;
 }
 
 #details-content .status-line {
-  margin-top: 120px;  
-  margin-bottom: 10px;          
+  margin-top: 7.5rem;
+  margin-bottom: 0.625rem;
   color: #2B5443;
   font-family: 'Poppins', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1.3;
 }
@@ -326,59 +317,60 @@ button {
   background-color: #267454;
   color: #DEF8EB;
   border: none;
-  border-radius: 30px;
-  padding: 10px 20px;
-  font-size: 16px;
+  border-radius: 1.875rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
   font-weight: 400;
   cursor: pointer;
   text-align: center;
-  margin-top: 0px;      
-  width: 50%;             
+  margin-top: 0;
+  width: 50%;
   transition: background 0.2s ease;
 }
 
 .leaf {
   position: absolute;
-  pointer-events: none; 
+  pointer-events: none;
   user-select: none;
 }
 
 .leaf-top {
-  width: 800px;
+  width: 50rem;
   right: 4%;
   top: -5%;
-  z-index: 50; 
+  z-index: 50;
 }
 
 .leaf-bottom {
-  width: 500px;
+  width: 31.25rem;
   right: 8%;
   top: 30%;
-  z-index: 40; 
-  opacity: 0.9; 
+  z-index: 40;
+  opacity: 0.9;
 }
+
 
 #page-add {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 0;
+  padding: 2.5rem 0;
   font-family: 'Poppins', sans-serif;
 }
 
 #add-title {
   font-family: 'Poppins', sans-serif;
-  font-weight: 500;        
-  font-size: 50px;         
+  font-weight: 500;
+  font-size: 3.125rem;
   color: #00321D;
-  margin: -20px 0 50px 0;
-  line-height: 1.1; 
+  margin: -1.25rem 0 3.125rem 0;
+  line-height: 1.1;
 }
 
 #add-plant-form {
   display: flex;
   flex-direction: column;
-  gap: 35px;   
+  gap: 2.1875rem;
   width: 60%;
 }
 
@@ -390,11 +382,10 @@ button {
 
 .form-row label {
   color: #2B5443;
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 500;
   width: 35%;
 }
-
 
 .form-row input,
 .form-row textarea {
@@ -402,9 +393,9 @@ button {
   color: #25503E;
   font-family: 'Poppins', sans-serif;
   border: none;
-  border-radius: 5px;
-  padding: 12px;        
-  font-size: 16px;  
+  border-radius: 0.3125rem;
+  padding: 0.75rem;
+  font-size: 1rem;
   width: 60%;
   outline: none;
   resize: none;
@@ -416,18 +407,17 @@ button {
   background-color: #CFE1D9;
 }
 
-
 #save-btn {
   background-color: #267454;
   color: #DEF8EB;
   border: none;
-  border-radius: 30px;
-  padding: 6px 32px;     
-  font-size: 15px;        
+  border-radius: 1.875rem;
+  padding: 0.375rem 2rem;
+  font-size: 0.9375rem;
   font-weight: 400;
   cursor: pointer;
   text-align: center;
-  width: 220px;          
+  width: 13.75rem;
   transition: background 0.2s ease;
   align-self: flex-start;
 }
@@ -436,46 +426,41 @@ button {
   background-color: #1f5e45;
 }
 
-
-/* Заголовок страницы */
 #gallery-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  font-size: 50px;
+  font-size: 3.125rem;
   color: #00321D;
-  margin: 0 0 10px 0;
+  margin: 0 0 0.625rem 0;
   line-height: 1.1;
 }
 
-/* Контейнер галереи — ВЫРАВНИВАЕМ ПО ЛЕВОМУ КРАЮ */
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
-  justify-content: flex-start;   /* ← ключевой момент */
-  width: 100%;                   /* чтобы левое выравнивание работало */
-  max-width: 900px;              /* можно менять */
-  margin-top: 20px;
+  gap: 1.5625rem;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 56.25rem;
+  margin-top: 1.25rem;
 }
 
-/* Ряд загрузки */
 .upload-row {
   display: flex;
   align-items: center;
-  gap: 15px;
-  margin: 20px 0 30px 0;
+  gap: 0.9375rem;
+  margin: 1.25rem 0 1.875rem 0;
 }
 
-/* Поле ввода названия — ДЕЛАЕМ НИЖЕ */
 #photo-plant-name {
   background-color: #DDEAE4;
   color: #25503E;
   font-family: 'Poppins', sans-serif;
-  font-size: 15px;
+  font-size: 0.9375rem;
   border: none;
-  border-radius: 5px;
-  padding: 6px 10px;        /* ← уменьшенная высота */
-  width: 200px;
+  border-radius: 0.3125rem;
+  padding: 0.375rem 0.625rem;
+  width: 12.5rem;
   outline: none;
   transition: background 0.2s ease;
 }
@@ -484,14 +469,13 @@ button {
   background-color: #CFE1D9;
 }
 
-/* Кнопка добавления фото */
 #upload-photo-button {
   background-color: #267454;
   color: #DEF8EB;
   border: none;
-  border-radius: 30px;
-  padding: 6px 32px;
-  font-size: 15px;
+  border-radius: 1.875rem;
+  padding: 0.375rem 2rem;
+  font-size: 0.9375rem;
   font-weight: 400;
   cursor: pointer;
   text-align: center;
@@ -502,13 +486,12 @@ button {
   background-color: #1f5e45;
 }
 
-/* Карточка */
 .photo-item {
   background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  width: 160px;                 /* компактнее */
-  padding: 12px;
+  border-radius: 1.25rem;
+  box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.1);
+  width: 10rem;
+  padding: 0.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -516,35 +499,32 @@ button {
 }
 
 .photo-item:hover {
-  transform: translateY(-3px);
+  transform: translateY(-0.1875rem);
 }
 
-/* Фото */
 .gallery-photo {
   width: 100%;
-  height: 130px;                /* компактнее */
+  height: 8.125rem;
   object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 8px;
+  border-radius: 0.9375rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Название растения */
 .photo-item p {
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 500;
   color: #25503E;
-  margin: 5px 0 8px 0;
+  margin: 0.3125rem 0 0.5rem 0;
   text-align: center;
 }
 
-/* Кнопка удаления */
 .delete-photo-btn {
   background-color: #267454;
   color: #DEF8EB;
   border: none;
-  border-radius: 30px;
-  padding: 6px 20px;
-  font-size: 14px;
+  border-radius: 1.875rem;
+  padding: 0.375rem 1.25rem;
+  font-size: 0.875rem;
   cursor: pointer;
   transition: background 0.2s ease;
 }
@@ -553,32 +533,29 @@ button {
   background-color: #1f5e45;
 }
 
-/* Заголовок сообщества */
 #community-title {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #00321D;
-  margin-top: 40px;
+  margin-top: 2.5rem;
 }
 
 .upload-file-btn:hover {
   background-color: #1f5e45;
 }
 
-/* Скрываем настоящий input */
 #photo-input {
   display: none;
 }
 
-/* Кастомная кнопка выбора файла */
 .upload-file-btn {
   background-color: #267454;
   color: #DEF8EB;
   border: none;
-  border-radius: 30px;
-  padding: 6px 32px;
-  font-size: 15px;
+  border-radius: 1.875rem;
+  padding: 0.375rem 2rem;
+  font-size: 0.9375rem;
   font-weight: 400;
   cursor: pointer;
   text-align: center;
@@ -590,30 +567,26 @@ button {
   background-color: #1f5e45;
 }
 
-/* Имя выбранного файла */
 .file-name {
   font-family: 'Poppins', sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #25503E;
-  margin-left: 10px;
-  min-width: 120px;
+  margin-left: 0.625rem;
+  min-width: 7.5rem;
 }
-
-
 
 .photo-item {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.3125rem;
 }
 
 .photo-item img {
   width: 100%;
-  height: 120px;
+  height: 7.5rem;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 0.5rem;
 }
-
 
 .modal {
   position: fixed;
@@ -631,14 +604,15 @@ button {
 .modal img {
   max-width: 90%;
   max-height: 90%;
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 
 #modal-close {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 40px;
+  top: 1.25rem;
+  right: 1.875rem;
+  font-size: 2.5rem;
   color: white;
   cursor: pointer;
 }
+
