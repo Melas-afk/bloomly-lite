@@ -52,7 +52,15 @@ export function setLanguage(lang) {
 }
 
 export function initLanguageMenu() {
+  const savedLang = localStorage.getItem("lang") || "ru";
+
   document.querySelectorAll(".lang-option").forEach(option => {
+    if (option.dataset.lang === savedLang) {
+      option.classList.add("active");
+    } else {
+      option.classList.remove("active");
+    }
+
     option.addEventListener("click", () => {
       const lang = option.dataset.lang;
 
@@ -63,6 +71,7 @@ export function initLanguageMenu() {
     });
   });
 }
+
 
 
 

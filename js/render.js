@@ -3,6 +3,7 @@ import { getCurrentLang } from "./state.js";
 import { savePlants } from "./storage.js";
 import { showPlantDetails } from "./details.js";
 import { attachPlantCardEvents } from "./events.js";
+import { Plant } from "./plant.js";
 
 
 export function renderPlant(plant) {

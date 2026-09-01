@@ -1,4 +1,4 @@
-function Plant(name, description, frequency) {
+export function Plant(name, description, frequency) {
   this.name = name;                
   this.description = description;   
   this.frequency = frequency;       

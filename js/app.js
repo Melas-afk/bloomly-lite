@@ -38,7 +38,7 @@ function init() {
   initPhotoModal();
 
   initLanguageMenu();
-  const savedLang = localStorage.getItem("lang") || "ru";
+  const savedLang = localStorage.getItem("lang") || "en";
   setLanguage(savedLang);
 
   loadCommunityPhotos();

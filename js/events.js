@@ -2,25 +2,35 @@ import { savePlants } from "./storage.js";
 import { showPlantDetails } from "./details.js";
 import { translations } from "./translations.js";
 import { getCurrentLang, plants } from "./state.js";
+import { renderPlant } from "./render.js";
+import { Plant } from "./plant.js";
 
 export function initAddPlantForm() {
   const form = document.getElementById("add-plant-form");
+  const nameInput = document.getElementById("plant-name");
+  const descriptionInput = document.getElementById("plant-description");
+  const frequencyInput = document.getElementById("plant-frequency");
 
   form.addEventListener("submit", e => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const name = document.getElementById("plant-name").value;
-    const description = document.getElementById("plant-description").value;
-    const frequency = parseInt(document.getElementById("plant-frequency").value);
+  const name = nameInput.value.trim();
+  const description = descriptionInput.value.trim();
+  const frequency = parseInt(frequencyInput.value);
 
-    const plant = new Plant(name, description, frequency);
-    plants.push(plant);
+  if (!name || !frequency) return;
 
-    savePlants();
-    renderPlant(plant);
-    form.reset();
-  });
+  const plant = new Plant(name, description, frequency);
+  plants.push(plant);
+
+  savePlants();
+  renderPlant(plant);
+  
+  location.reload();
+});
+
 }
+
 
 export function attachPlantCardEvents(card, plant) {
   const t = translations[getCurrentLang()];
