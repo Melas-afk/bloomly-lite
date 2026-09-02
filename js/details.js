@@ -21,6 +21,11 @@ export function showPlantDetails(plant) {
     <button id="back-btn">${t.backBtn}</button>
   `;
 
+  const desc = detailsContent.querySelector("p:nth-of-type(1)");
+  desc.addEventListener("click", () => {
+    desc.classList.toggle("expanded");
+  });
+
   leaf1 = document.createElement("img");
   leaf1.src = "pic/monleaves1.png";
   leaf1.classList.add("leaf", "leaf-top");
@@ -29,8 +34,9 @@ export function showPlantDetails(plant) {
   leaf2.src = "pic/monleaves2.png";
   leaf2.classList.add("leaf", "leaf-bottom");
 
-  document.body.appendChild(leaf1);
-  document.body.appendChild(leaf2);
+    detailsPage.appendChild(leaf1);
+    detailsPage.appendChild(leaf2);
+
 
   const backBtn = document.getElementById("back-btn");
   backBtn.addEventListener("click", () => {

@@ -7,6 +7,7 @@ body {
 }
 
 body::before {
+
   content: "";
   position: fixed;
   top: 50%;
@@ -87,16 +88,15 @@ nav button {
 }
 
 main {
-  width: 53.125rem; 
-  min-height: calc(100vh - 7.5rem); 
-  margin: 6.25rem auto 0 auto; 
+  width: min(90vw, 53.125rem);
+  margin: 6.25rem auto 0 auto;
+  position: relative;
+  min-height: calc(100vh - 7.5rem);  
   background-color: #ffffff;
   border-radius: 2.0625rem; 
   box-shadow: 0 0.25rem 1.5625rem rgba(0, 0, 0, 0.08); 
   padding: 2.5rem 3.125rem; 
-  position: relative;
-  padding-top: 0.9375rem; 
-  padding-left: 2.1875rem; 
+  padding-top: 0.9375rem;  
   z-index: 1;
 }
 
@@ -177,6 +177,25 @@ main {
   line-height: 1.4;
 }
 
+.plant-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;          
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;            
+  word-wrap: break-word;          
+  cursor: pointer;
+}
+
+.plant-description.expanded {
+  display: block;                
+  -webkit-line-clamp: unset;
+  overflow: visible;
+  max-height: none;
+}
+
+
 .plant-card .plant-frequency,
 .plant-card .plant-last-watered {
   color: #2B5443;
@@ -243,6 +262,7 @@ button {
   align-items: center;
   padding: 0.9375rem 0;
   font-family: 'Poppins', sans-serif;
+  position: relative;
 }
 
 #details-title {
@@ -292,6 +312,25 @@ button {
   line-height: 1.4;
   width: 100%;
   box-sizing: border-box;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; 
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  white-space: normal;      
+  word-wrap: break-word;    
+  cursor: pointer;
+  padding-right: 16px;      
+  position: relative;
+}
+
+#details-content p:nth-of-type(1).expanded {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+  max-height: none;
+  padding-right: 0; 
 }
 
 #details-content p {
@@ -328,26 +367,26 @@ button {
   transition: background 0.2s ease;
 }
 
+
 .leaf {
   position: absolute;
   pointer-events: none;
   user-select: none;
 }
-
 .leaf-top {
   width: 50rem;
-  right: 4%;
-  top: -5%;
-  z-index: 50;
+  right: -15rem;
+  top: -13rem;
+  z-index: 10;
 }
-
 .leaf-bottom {
   width: 31.25rem;
-  right: 8%;
-  top: 30%;
-  z-index: 40;
-  opacity: 0.9;
+  right: -10rem;
+  top: 9rem;
+  z-index: 5;
 }
+
+
 
 
 #page-add {
@@ -616,3 +655,32 @@ button {
   cursor: pointer;
 }
 
+.edit-form {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #F3FAF7;
+  border: 1px solid #D6E8E0;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.edit-form input,
+.edit-form textarea {
+  width: 12rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  color: #25503E;
+  background: #FFFFFF;
+  border: 1px solid #C8DCD3;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.edit-form input:focus,
+.edit-form textarea:focus {
+  border-color: #267454;
+}

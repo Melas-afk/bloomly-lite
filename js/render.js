@@ -24,6 +24,13 @@ export function renderPlant(plant) {
 
   attachPlantCardEvents(card, plant);
   document.getElementById("plants-list").appendChild(card);
+
+  const desc = card.querySelector(".plant-description");
+
+    desc.addEventListener("click", () => {
+      desc.classList.toggle("expanded");
+    });
+
 }
 
 export function renderPlants(list) {

@@ -44,14 +44,14 @@ export function attachPlantCardEvents(card, plant) {
   });
 
   const editBtn = card.querySelector(".edit-btn");
-  const editForm = document.createElement("div");
+  const editForm = document.createElement("form");
   editForm.classList.add("edit-form");
   editForm.style.display = "none";
   editForm.innerHTML = `
-    <input type="text" class="edit-name" value="${plant.name}">
+    <input type="text" class="edit-name" required value="${plant.name}">
     <textarea class="edit-description">${plant.description}</textarea>
-    <input type="number" class="edit-frequency" value="${plant.frequency}">
-    <button class="save-edit-btn">${t.saveEditBtn}</button>
+    <input type="number" class="edit-frequency" min="1" required value="${plant.frequency}">
+    <button class="save-edit-btn" type="submit">${t.saveEditBtn}</button>
   `;
   card.appendChild(editForm);
 
@@ -59,20 +59,21 @@ export function attachPlantCardEvents(card, plant) {
     editForm.style.display = "block";
   });
 
-  const saveEditBtn = editForm.querySelector(".save-edit-btn");
-  saveEditBtn.addEventListener("click", () => {
-    plant.name = editForm.querySelector(".edit-name").value;
-    plant.description = editForm.querySelector(".edit-description").value;
-    plant.frequency = parseInt(editForm.querySelector(".edit-frequency").value);
+editForm.addEventListener("submit", (e) => {
+  e.preventDefault(); 
 
-    card.querySelector(".plant-name").textContent = plant.name;
-    card.querySelector(".plant-description").textContent = plant.description;
-    card.querySelector(".plant-frequency").textContent =
-      t.waterEveryDays(plant.frequency);
+  plant.name = editForm.querySelector(".edit-name").value;
+  plant.description = editForm.querySelector(".edit-description").value;
+  plant.frequency = parseInt(editForm.querySelector(".edit-frequency").value);
 
-    savePlants();
-    editForm.style.display = "none";
-  });
+  card.querySelector(".plant-name").textContent = plant.name;
+  card.querySelector(".plant-description").textContent = plant.description;
+  card.querySelector(".plant-frequency").textContent =
+    t.waterEveryDays(plant.frequency);
+
+  savePlants();
+  editForm.style.display = "none";
+});
 
   const detailsBtn = card.querySelector(".details-btn");
   detailsBtn.addEventListener("click", () => {

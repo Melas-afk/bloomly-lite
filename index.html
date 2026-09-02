@@ -22,8 +22,12 @@
     <span data-lang="en" class="lang-option">EN</span>
   </div>
 
-
   </header>
+<div id="photo-modal" class="modal" style="display:none;">
+  <span id="modal-close">&times;</span>
+  <img id="modal-img" src="" alt="">
+</div>
+
 
   <main>
     <section id="page-plants" class="page">
@@ -91,17 +95,14 @@
   <div id="community-gallery" class="gallery"></div>
 </section>
 
-    <section id="page-details" class="page" style="display:none;">
-      <h2 id="details-title"></h2>
-      <div id="details-content"></div>
-    </section>
+<section id="page-details" class="page" style="display:none;">
+  <h2 id="details-title"></h2>
+  <div id="details-content"></div>
+</section>
 
-  </main>
+</main>
 
-<div id="photo-modal" class="modal" style="display:none;">
-  <span id="modal-close">&times;</span>
-  <img id="modal-img" src="" alt="">
-</div>
+
 
   <script type="module" src="js/api.js"></script>
   <script type="module" src="js/app.js"></script>
